@@ -10,7 +10,11 @@ dotenv.config();
 // Connecting with the database
 require('./src/Database/Database')
 
+// Creating the Models 
+const userModel = require('./src/Models/Auth/User');
+
 // Here i am using the static folder;
+app.use(express.json());
 app.use('/public', express.static('public'));
 
 // Here i am using the router 

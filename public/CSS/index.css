@@ -1,4 +1,244 @@
-body
-{
-    background-color: rebeccapurple;
+html{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+/* navigation container */
+.navContainer{
+     background-color: rgba(60, 63, 63,0.5); 
+     /* background: #159957; 25, Safari 5.1
+     background: -webkit-linear-gradient(to top, #155799, #159957);
+     background: linear-gradient(to top, #155799, #159957);  
+     */
+    width: 25vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transform: translateX(-100vw);
+}
+
+nav,
+nav ul{
+    width: 25vw;
+    height: 75vh;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+nav ul li{
+    height: 15%;
+    overflow: hidden;
+}
+
+nav ul li a{
+    text-decoration: none;
+    position: relative;
+    top: 45%;
+    color: white;
+    display: block;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 20px;
+    z-index: 2;
+}
+
+nav ul li a:hover{
+    transform: scale(1.2);
+}
+
+nav ul li a::before{
+    content: "";
+    width: 8vw;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 45%;
+    opacity: 0;
+}
+
+nav ul li a:hover::before{
+    opacity: 1;
+}
+
+
+/* #nav1{
+    background-color: #21292c;
+}
+
+#nav2{
+    background-color:#aa3e39;;
+}
+
+
+#nav3{
+    background-color: #aa6e39
+}
+
+
+#nav4{
+    background-color: #236267;
+}
+
+
+#nav5{
+    background-color: #2c8437;
+} */
+
+.navContainer-move-right{
+    transition: all 0.4s ease-in-out;
+    transform: translateX(0);
+}
+
+.navContainer-move-left{
+    transition: all 0.8s ease-in-out;
+    transform: translateX(-100vw);
+}
+
+
+/* Animation */
+/* Slide in animation with delay for each */
+.slide-in-1 {
+    animation: slide-in 0.4s linear 0.2s both;
+  }
+  
+  .slide-in-2 {
+    animation: slide-in 0.4s linear 0.4s both;
+  }
+  
+  .slide-in-3 {
+    animation: slide-in 0.4s linear 0.6s both;
+  }
+  
+  .slide-in-4 {
+    animation: slide-in 0.4s linear 0.8s both;
+  }
+  
+  .slide-in-5 {
+    animation: slide-in 0.4s linear 1s both;
+  }
+  
+  @keyframes slide-in {
+    from {
+      transform: translateX(-100%);
+    }
+  
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  /* Slide out animation with delay for each */
+  .slide-out-1 {
+    animation: slide-out 0.3s linear 1s both;
+  }
+  
+  .slide-out-2 {
+    animation: slide-out 0.3s linear 0.8s both;
+  }
+  
+  .slide-out-3 {
+    animation: slide-out 0.3s linear 0.6s both;
+  }
+  
+  .slide-out-4 {
+    animation: slide-out 0.3s linear 0.4s both;
+  }
+  
+  .slide-out-5 {
+    animation: slide-out 0.3s linear 0.2s both;
+  }
+  
+  @keyframes slide-out {
+    from {
+      transform: translateX(0);
+    }
+  
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+
+
+/* navigation Bars */
+.navBar{
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    z-index: 11;
+    /* background-color: black; */
+    cursor: pointer;
+    display: inline;
+    /* width: 50px;
+    height: 50px; */
+}
+
+.bar1,
+.bar2,
+.bar3{
+    width: 40px;
+    height: 2px;
+    margin: 8px 0;
+    background-color: white;
+    transition: 0.4s;
+}
+
+.change .bar1{
+    transform: rotate(-45deg) translate(-7px, 6px);
+}
+
+.change .bar2{
+    opacity: 0;
+}
+
+.change .bar3{
+    transform: rotate(45deg) translate(-6px ,-8px) ;
+}
+
+section{
+    width: 100%;
+    height: 100vh;
+    text-transform: uppercase;
+    position: relative;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    letter-spacing: 2px;
+    z-index: 1;
+    color: white;
+    font-size: 35px;
+}
+
+section#home {
+    background: #159957; 
+     background: -webkit-linear-gradient(to top, #155799, #159957); 
+     background: linear-gradient(to top, #155799, #159957); 
+    background-size: cover;
+    background-position: center center;
+    background-color: #21292c;
+}
+
+section#home h1{
+    text-align: center;
+    font-size: 1rem;
+    margin: 0;
+}
+
+@media screen and (max-width:600px) {
+    section#home h1{
+        font-size: 0.8rem;
+    }
 }
