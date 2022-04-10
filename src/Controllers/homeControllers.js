@@ -1,10 +1,10 @@
-const homepage = () => {
+const homeController = () => {
     return {
         index: (req, res) => {
             res.render('index');
         },
         about: (req, res) => {
-            res.send('This is about page');
+            res.render('about');
         },
         projects: (req,res) => {
             res.send('This is projects page');
@@ -14,7 +14,19 @@ const homepage = () => {
         },
         contact: (req,res)=>{
             res.send('This is contact page');
+        },
+        login:(req,res)=>{
+            res.render('login');
+        },
+        register:(req,res)=>{
+            res.render('register');
+        },
+        favourites:(req,res)=>{
+            res.render('favourites');
+        },
+        nft:(req,res)=>{
+            res.render('nft');
         }
     }
 };
-module.exports = homepage;
+module.exports = homeController;

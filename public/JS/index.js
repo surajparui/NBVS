@@ -1,3 +1,4 @@
+// nav
 const navBar = document.getElementById('navBar');
 const navContainer = document.getElementById('navContainer');
 const nav1 = document.getElementById('nav1');
@@ -42,3 +43,5 @@ navBar.addEventListener('click',toggleNav);
 navArray.forEach((nav) => {
     nav.addEventListener('click', toggleNav);
   });
+
+

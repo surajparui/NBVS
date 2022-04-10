@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const path = require('path');
 const dotenv = require('dotenv');
 const app = express();
@@ -14,6 +15,7 @@ require('./src/Database/Database')
 const userModel = require('./src/Models/Auth/User');
 
 // Here i am using the static folder;
+app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 app.use('/public', express.static('public'));
 
